@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MathGame.css">
+    <title>Math Game</title>
+</head>
+<body>
+    <div class="mathgame">
+        <h1 class="title">Math Game</h1>
+        <p id="level">level</p>
+        <p id="countdown">timeleft</p>
+        <p id="math">math</p>
+            <div class="text-form">
+                <label for="input_result"></label>
+                <input type="text" name="input_result" id="input_result" class="textform" required placeholder="Enter your answer" ><br>
+                <button type="submit" id="checkresult">Submit</button>
+            </div>            
+
+        <div id="result"></div>
+        <div id="quanlitycorrect"></div>
+        <div id="quanlitytotal"></div>
+    </div>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-message"></h2>
+            <button id="play-again">Reset</button>
+            <button id="exit">Exit</button>
+        </div>
+    </div>
+
+    <script src="MathGame.js"></script>
+</body>
+</html>
