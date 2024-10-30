@@ -1,0 +1,67 @@
+body{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.mathgame {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border:  3px solid green;
+    width:50%
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.title {
+    margin: 0;
+    margin-top: 10px;
+}
+
+#level {
+    margin: 0;
+}
+
+#countdown {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.text-form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#input_result {
+    width: 90%; /* Đặt chiều rộng bằng 100% của phần tử chứa */
+    padding: 10px; /* Thêm một chút padding để đẹp hơn */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng tổng thể */
+}
+
+#checkresult {
+    width: 80px;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: red;
+}
