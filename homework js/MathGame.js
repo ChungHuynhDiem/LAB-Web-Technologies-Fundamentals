@@ -1,4 +1,4 @@
-let score = { correct: 0, total:1, incorrect:0, checklevel:1 };
+let score = { correct: 0, total:0, incorrect:0, checklevel:1, totallevel:0, };
 let countdownInterval;
 
 function startCountdown(durarion){
@@ -130,16 +130,16 @@ function AdvancedMath() {
 const checkmath = (answer,userInput,scoreObj) => {
     if (answer===userInput)
     {
-        document.getElementById('result').innerText=`Correct!!!`; scoreObj.correct++;scoreObj.total++; scoreObj.checklevel++;
+        document.getElementById('result').innerText=`Correct!!!`; scoreObj.correct++;scoreObj.total++; scoreObj.checklevel++;scoreObj.totallevel++;
     }
     else
     {
-        document.getElementById('result').innerText=`Incorrect!!!`;scoreObj.incorrect++;scoreObj.total++;
+        document.getElementById('result').innerText=`Incorrect!!!`;scoreObj.incorrect++;scoreObj.total++;scoreObj.totallevel++;
     }
 
     setTimeout(() => {
-        document.getElementById('result').innerText = ''; // Xóa chữ sau 3 giây
-    }, 2000); // 2000 ms = 3 s
+        document.getElementById('result').innerText = ''; // Xóa chữ sau 2 giây
+    }, 2000); // 2000 ms = 2 s
 }
 
 const getmath = () => {
@@ -155,16 +155,17 @@ let result=getmath();
 MathLevel(score.total);
 let answers ;
 document.getElementById('quanlitycorrect').innerHTML=`Correct: ${score.correct}  Incorrect: ${score.correct}`;
-document.getElementById('quanlitytotal').innerHTML=`Total: ${score.total}/10`;
+document.getElementById('quanlitytotal').innerHTML=`Total: ${score.totallevel}/10`;
+
 document.getElementById('checkresult').addEventListener('click', function () {
-    MathLevel(score.total);
+    
     let inputValue = document.getElementById('input_result').value;
     // let answer = parseFloat(inputValue);
-    if(score.total<=10)
+    if(score.total<10)
         {
             answers = parseFloat(inputValue);
         }
-    else if(score.total>10)
+    else if(score.total>=10)
         {
             if(inputValue==='true')
             {
@@ -175,15 +176,22 @@ document.getElementById('checkresult').addEventListener('click', function () {
                 answers = false;
             }
         }
-
+    console.log(`result: ${result}, answers:${answers}, total: ${score.total}`)
     checkmath(result, answers,score); 
+    MathLevel(score.total);
     document.getElementById('quanlitycorrect').innerHTML=`Correct: ${score.correct}  Incorrect: ${score.incorrect}`;
-    document.getElementById('quanlitytotal').innerHTML=`Total: ${score.checklevel}/10`;
+    document.getElementById('quanlitytotal').innerHTML=`Total: ${score.totallevel}/10`;
     document.getElementById('input_result').value= ``;
-    if(score.total<10)
+    if(score.total<=10)
     {
-        result=getmath();
-        if (score.total === 9)
+        if(score.total<10){
+            result=getmath();
+        }
+        else{
+            result=IntermediateMath();
+        }
+
+        if (score.total === 10)
         {
             if (score.checklevel <8)
             {
@@ -192,14 +200,25 @@ document.getElementById('checkresult').addEventListener('click', function () {
                 document.getElementById('checkresult').disabled = true; // Vô hiệu hóa nút kiểm tra
                 endGame("Game Over !!!");
             }
-            else{ score.checklevel = 0; score.correct=0; score.incorrect=0;}
+            else{ 
+                score.checklevel = 1; score.correct=0; score.incorrect=0; score.totallevel=0;
+                document.getElementById('quanlitycorrect').innerHTML=`Correct: ${score.correct}  Incorrect: ${score.incorrect}`;
+                document.getElementById('quanlitytotal').innerHTML=`Total: ${score.totallevel}/10`;
+            }
         }
 
     }
-    else if(score.total>=10 && score.total<20)
+    else if(score.total>10 && score.total<=20)
     {
-        result=IntermediateMath();
-        if (score.total === 19)
+
+        if(score.total<20){
+            result=IntermediateMath();
+        }
+        else{
+            result=AdvancedMath();
+        }
+
+        if (score.total === 20)
             {
                 if (score.checklevel <8)
                 {
@@ -208,16 +227,31 @@ document.getElementById('checkresult').addEventListener('click', function () {
                     document.getElementById('checkresult').disabled = true; // Vô hiệu hóa nút kiểm tra
                     endGame("Game Over !!!");
                 }
-                else{ score.checklevel = 0; score.correct=0; score.incorrect=0 }
+                else{ 
+                    score.checklevel = 1; score.correct=0; score.incorrect=0; score.totallevel=0;
+                    document.getElementById('quanlitycorrect').innerHTML=`Correct: ${score.correct}  Incorrect: ${score.incorrect}`;
+                    document.getElementById('quanlitytotal').innerHTML=`Total: ${score.totallevel}/10`;
+                }
             }
     }
     else if (score.total>=20 && score.total<30){
         result=AdvancedMath();
     }
     else{
-        clearInterval(countdownInterval);
-        Calculate.innerText = `Congratulations you've completed it! Result: ${score.correct}/10`;
-        document.getElementById('checkresult').disabled = true; // Vô hiệu hóa nút kiểm tra
+        if (score.checklevel <8)
+            {
+                clearInterval(countdownInterval);
+                Calculate.innerText = `Game Over !!!`;
+                document.getElementById('checkresult').disabled = true; // Vô hiệu hóa nút kiểm tra
+                endGame("Game Over !!!");
+            }
+        else
+        {
+            clearInterval(countdownInterval);
+            Calculate.innerText = `Congratulations you've completed it! `;//Result: ${score.correct}/10
+            document.getElementById('checkresult').disabled = true; // Vô hiệu hóa nút kiểm tra
+        }
+
     }
 });
 

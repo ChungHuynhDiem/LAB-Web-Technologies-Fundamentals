@@ -1,0 +1,440 @@
+*{
+    font-family:'Jost', sans-serif;
+}
+
+body {
+    width:100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+header h1{
+    margin: 0px;
+    padding: 100px;
+    text-align: center;
+    font-size: 80px;
+    background-image:url(img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:left
+
+}
+
+.nav1 {
+    padding:20px;
+    padding-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(75, 230, 75);
+}
+
+.nav1 a{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    font-size: 35px;
+    margin:10px;
+}
+
+#main-page {
+    color: red;
+}
+
+.nav1 a:hover{
+    color: red;
+}
+
+.block-food {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    
+}
+
+.food {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 5px rgb(170, 170, 170);
+    border-radius: 35px;
+    font-size: 30px;
+    padding: 30px 40px;
+}
+
+.photo-food {
+    height: 400px;
+    width: auto;
+    border-radius: 35px;
+}
+
+.photo {
+    text-align: center;
+}
+
+.food:hover {
+    border: 2px solid red;
+}
+
+.price, .name-food {
+    margin: 10px 0;
+}
+
+.weight-volume {
+    margin-top: auto;
+    color: rgb(177, 177, 177);
+}
+
+.table-choose{
+    display: none;
+}
+
+.button {
+    display:flex;
+    justify-content: center;
+}
+
+.button input[type="submit"]{
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 30px;
+    background-color: #f1eee9;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.button input[type="submit"]:hover {
+    background-color: rgb(96, 205, 124); /* Background color on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hover shadow effect */
+}
+
+.button input[type="submit"]:active {
+    background-color: black; /* Background color when holding down */
+    color: white;
+    transform: scale(0.90); /* Zoom out button effect */
+}
+
+.kind-food {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#contacts p,#contacts a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#contacts {
+    background-color: black;
+    padding: 40px;
+    margin-top: 10px;
+    width: auto;
+    box-sizing:border-box;
+}
+
+.icon-header {
+    padding-right: 30px;
+}
+
+
+.form-order {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+.name-oder {
+    text-align: center;
+    color:#0e102c;
+    font-weight: bolder;
+}
+
+.place-order {
+    font-size: 50px;
+    text-align: center;
+}
+
+.customer-order, .customer-form {
+    font-size: 30px;
+}
+
+#soup, #main-food, #drink {
+    width: 450px;
+    height: 35px;
+    font-size: 25px;
+    color: gray;
+    border-radius: 10px;
+}
+#soup option,#main-food option,#drink option {
+    background-color: #ffffff;/* Background color of each option */
+    color: #000000; 
+    padding: 5px;/* Space inside each option */
+}
+
+#soup:hover,#main-food:hover,#drink:hover {
+    border-color: #ff0000; /* Change border color on hover */
+}
+
+#soup:focus,#main-food:focus,#drink:focus {
+    outline: none; /* Remove default border when selected */
+    border-color: #007bff; /* Change border color when selected */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Shadow effect */
+}
+
+#feedback {
+    background-color: #f9f9f9;
+    color: #333; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    border-radius: 5px; 
+    font-size: 16px;
+    width: 90%; 
+    box-sizing: border-box; /* Make sure padding doesn't affect the size */
+    resize: none; /* Disable resizing */
+}
+
+#feedback::placeholder {
+    color: #999; /* color of placeholder */
+    font-size: 30px;
+    font-style: italic; /* Italic font */
+}
+
+#feedback:hover {
+    border-color: #ff0000; 
+}
+
+#feedback:focus {
+    outline: none;/* Remove default border when selected */
+    border-color: #007bff;/* Border color when textarea is selected */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Shadow effect */
+}
+
+input[type="text"].textform, input[type="email"].textform, input[type="tel"].textform {
+    width: 450px;
+    height: 35px;
+    font-size: 25px;
+    color: gray;
+    border-radius: 10px;
+}
+
+
+input[type="text"].textform:focus, input[type="email"].textform:focus, input[type="tel"].textform:focus,input[type="time"].textform:focus {
+    outline: none; 
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); 
+}
+
+input[type="time"].textform {
+    width: 150px;
+    height: 35px;
+    font-size: 25px;
+    color: gray;
+    border-radius: 10px;
+}
+
+.lol, .radio-buttons-text {
+    margin: 5px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.form-submit input[type="submit"], .form-submit input[type="reset"]{
+    padding: 10px 15px;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: white;
+    border: 3px solid black;
+}
+
+.form-submit input[type="submit"]:hover, .form-submit input[type="reset"]:hover {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.form-submit input[type="submit"]:active,.form-submit input[type="reset"]:active {
+    background-color: black;
+    color: white;
+    transform: scale(0.8); 
+}
+
+.total {
+    display:flex;
+    flex-direction: row;
+}
+
+@media (max-width: 1100px) {
+    .block-food {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+        gap: 10px; /* Space between blocks */
+    }
+
+    .nav1 {
+        display: flex;
+        justify-content: space-between;/* Align elements with equal spacing */
+        flex-wrap: wrap; /* Allow line breaks if needed */
+        padding: 0; /* Remove space between container and first/last element */
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        text-align: center; /* Center the main title text */
+    }
+
+    .nav1 {
+        display: flex;
+        flex-direction: column; /* Arrange elements vertically */
+        align-items: center; /* Center along the cross axis */
+    }
+
+    .nav1 a {
+        font-size: calc(35px + 4px);/* Increase the font size of the link by 4px */
+        margin: 5px 0; /* Space between links */
+    }
+
+    section h2 {
+        text-align: center; /* Center the text of section headers */
+    }
+
+    .block-food {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Keep 3 columns */
+        gap: 10px;/* Distance between food blocks */
+    }
+    .form-order {
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+}
+
+.test {
+    margin: 0px 5px 5px 0px;
+}
+
+.filter{
+    display:flex;
+    margin: 20px;
+    gap: 30px;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.button-filter input[type="submit"]{
+    width: 100%;
+    padding: 0px 10px;
+    height: 100%;
+    font-size: 25px;
+    background-color: #4dcb9f;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.button-filter input[type="submit"]:hover {
+    color:red;
+    background-color: #65f6c3;
+}
+
+
+
+.button-filter input[type="submit"].active {
+    transform: scale(1.20);
+    background-color: rgb(25, 245, 25);
+}
+
+.intro-combo {
+    text-align: center;
+    font-size: 30px;
+}
+
+.combo-lunch {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 10px;
+}
+
+.block-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items:center
+}
+
+
+.img-icon {
+    width: 6rem;
+}
+
+.img-icon:hover {
+    transform: scale(1.2) translateY(-10px);
+}
+
+.name-icon {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.note-combo {
+    font-size: 13px;
+    margin: 0;
+}
+
+.messange-box {
+    display: none;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 3px solid black;
+    font-size: 30px;
+}
+
+#message-text
+{
+    text-align: center;
+    font-size: 40px;
+
+}
+
+.block-button-massage
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#button-messange {
+    width: 30%;
+    font-size: 30px;
+    border-radius: 5px;
+}
+
+#button-messange:hover {
+    background-color: black;
+    color: white;
+}
+
+.icon-massage-box{
+    width: 20px;
+    height: auto;
+}
