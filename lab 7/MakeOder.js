@@ -20,6 +20,7 @@ const order = {//create objects to store selected dishes
     dessert: null,
 };
 
+
 // Update order section every time the button is pressed
 function updateOrderSection(dataDish, name, price) {
     if (soups.some(d => d.keyword === dataDish)) {
@@ -98,4 +99,10 @@ function renderOrder() {
 }
 
 
-addClickListeners();
+const AwaitAddClickListeners = async () => {
+    await DataFood();
+    addClickListeners();
+}
+
+AwaitAddClickListeners();
+
