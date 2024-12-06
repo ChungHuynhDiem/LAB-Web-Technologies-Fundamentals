@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="PlacingOder.css">
+    <title>Home web page - Vietfood Company - Lunch</title>
+</head>
+
+<body>
+    <header>
+        <h1>Viet Food</h1>
+        <nav class="nav1">
+            <a href="index.html">О нас</a>
+            <a href="pack-lunch.html">Собрать ланч</a>
+            <a href="#oder" id="main-page">Оформить заказ</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+    <main>
+        <section class="combo">
+            <h2 class="intro-combo">Доступные для заказа комбо</h2>
+            <div class="combo-lunch">
+                <div class="option">
+                    <div class="block-icon">
+                        <img src="icons/soup.png" alt="soup" class="img-icon">
+                        <p class="name-icon">Суп</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/main.png" alt="mainfood" class="img-icon">
+                        <p class="name-icon">Главное блюдо</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/salad.png" alt="salad" class="img-icon">
+                        <p class="name-icon">Салат</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/drink.png" alt="drink" class="img-icon">
+                        <p class="name-icon">Напиток</p>
+                    </div>
+                </div>
+
+                <div class="option">
+                    <div class="block-icon">
+                        <img src="icons/soup.png" alt="soup" class="img-icon">
+                        <p class="name-icon">Суп</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/main.png" alt="main food" class="img-icon">
+                        <p class="name-icon">Главное блюдо</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/drink.png" alt="drink" class="img-icon">
+                        <p class="name-icon">Напиток</p>
+                    </div>
+                </div>
+
+                <div class="option">
+                    <div class="block-icon">
+                        <img src="icons/soup.png" alt="soup" class="img-icon">
+                        <p class="name-icon">Суп</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/salad.png" alt="salad" class="img-icon">
+                        <p class="name-icon">Салат</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/drink.png" alt="drink" class="img-icon">
+                        <p class="name-icon">Напиток</p>
+                    </div>
+                </div>
+
+                <div class="option">
+                    <div class="block-icon">
+                        <img src="icons/main.png" alt="mainfood" class="img-icon">
+                        <p class="name-icon">Главное блюдо</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/salad.png" alt="salad" class="img-icon">
+                        <p class="name-icon">Салат</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/drink.png" alt="drink" class="img-icon">
+                        <p class="name-icon">Напиток</p>
+                    </div>
+                </div>
+
+                <div class="option">
+                    <div class="block-icon">
+                        <img src="icons/main.png" alt="mainfood" class="img-icon">
+                        <p class="name-icon">Главное блюдо</p>
+                    </div>
+                    <div class="block-icon">
+                        <img src="icons/drink.png" alt="drink" class="img-icon">
+                        <p class="name-icon">Напиток</p>
+                    </div>
+                </div>
+
+                <div class="option">
+                    <div class="block-icon">
+                        <img src="icons/desert.png" alt="dessert" class="img-icon">
+                        <p class="name-icon">Десерт</p>
+                        <i class="note-combo">(Можно добавить к любому заказу)</i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="soup-food FilterProcess">
+            <h2 class="kind-food">Состав заказа</h2>
+            <div class="block-food" data-array="array-soups">
+            </div>
+        </section>
+
+        <section class="main-order">
+            <h2 class="place-order">Сделать заказ</h2>
+            <form class="form-order">
+                <!-- action="https://httpbin.org/post" method="post" -->
+                <div class="customer-order">
+                    <p class="name-oder">Ваш заказ</p>
+
+                    <div class="order-section" id="order-section">Ничего не выбрано</div>
+                    <div class="table-choose" id="table-choose">
+                        <div class="choose-food">
+                            <label for="soup"><b>Суп:</b></label>
+                            <div id="soup-order">Ничего не выбрано</div>
+                            <input type="hidden" id="hidden-soup" name="soup" value="" required>
+                        </div>
+                        <div class="choose-food">
+                            <label for="main-food"><b>Главное блюдо:</b></label>
+                            <div id="main-dish-order">Ничего не выбрано</div>
+                            <input type="hidden" id="hidden-main-dish" name="main-food" value="" required>
+                        </div>
+                        <div class="choose-food">
+                            <label for="saladstarter"><b>Салаты и Стартеры:</b></label>
+                            <div id="saladstarter-order">Ничего не выбрано</div>
+                            <input type="hidden" id="hidden-saladstarter" name="saladstarter" value="" required>
+                        </div>
+                        <div class="choose-food">
+                            <label for="drink"><b>Напиток:</b></label>
+                            <div id="drink-order">Ничего не выбрано</div>
+                            <input type="hidden" id="hidden-drink" name="drink" value="" required>
+                        </div>
+                        <div class="choose-food">
+                            <label for="dessert"><b>Десерты:</b></label>
+                            <div id="dessert-order">Ничего не выбрано</div>
+                            <input type="hidden" id="hidden-dessert" name="dessert" value="" required>
+                        </div>
+                        <div class="choose-food total">
+                            <label for="total-order"><b>Стоимость:&nbsp;</b></label>
+                            <div id="total-order">0</div>
+                            <input type="hidden" id="hidden-total" name="total-order" value="">
+                        </div>
+                    </div>
+
+
+
+                    <div class="message-text">
+                        <label for="feedback">Сообщения</label> <br>
+                        <textarea id="feedback" name="feedback" rows="4" cols="87"
+                            placeholder="Введите здесь свои комментарии..."></textarea>
+                    </div>
+                </div>
+
+                <div class="customer-form">
+                    <p class="name-oder">Ваши данные</p>
+                    <div class="text-form">
+                        <label for="name">Имя:</label><br>
+                        <input type="text" name="name" id="name" class="textform" required
+                            placeholder="Введите ваше имя">
+                    </div>
+                    <div class="text-form">
+                        <label for="email">Email:</label> <br>
+                        <input type="email" name="email" id="email" class="textform" required
+                            placeholder="Введите ваша электронная почта">
+                    </div>
+                    <div class="form-checkbox1">
+                        <input type="checkbox" name="checkbox" id="checkbox" class="custom-radio" checked>
+                        <label for="checkbox">Получать информацию о скидках и акциях</label>
+                    </div>
+                    <div class="text-form">
+                        <label for="number-tel">Номер телефона:</label><br>
+                        <input type="tel" name="number-tel" id="number-tel" class="textform" required
+                            placeholder="Введите ваш номер телефона">
+                    </div>
+                    <div class="text-form">
+                        <label for="address">Адрес доставки:</label> <br>
+                        <input type="text" name="address" id="address" class="textform" required
+                            placeholder="Введите адрес доставки">
+                        <p class="lol"><i>Доставка осуществляется только в Москве</i></p>
+                    </div>
+                    <div class="radio-buttons">
+                        <p class="radio-buttons-text">Времени доставки:</p>
+                        <label>
+                            <input type="radio" name="delivery-time" value="now" required> Как можно
+                            скорее
+                        </label><br>
+                        <label>
+                            <input type="radio" name="delivery-time" value="by time"> К указанному времени
+                        </label>
+                    </div>
+                    <div class="text-form">
+                        <label for="time">Укажите время доставки:</label><br>
+                        <input type="time" name="time" id="time" min="07:00" max="23:00" step="300" class="textform"
+                            required>
+                    </div>
+                    <div class="comfirm">
+                        <p class="lol"><i>Доступное время доставкм с 8:00 до 22:00</i></p>
+                        <div class="buttons">
+                            <div class="form-submit">
+                                <input type="reset" value="Сбросить" id="remove-order">
+                            </div>
+                            <div class="form-submit">
+                                <input type="submit" value="Отправить" id="submit-order">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- hop thoai thong báo lỗi khi chọn combo -->
+    <div class="messange-box">
+        <p id="message-text">thông báo lỗi</p>
+        <div class="block-button-massage">
+            <a href="pack-lunch.html" class="button-a"> <button type="button" id="button-messange-failure" class="button-messange">Окей<img
+                        src="icons/ok.png" alt="ok" class="icon-massage-box"></button></a>
+
+            <button type="button" id="button-messange-success" class="button-messange">Окей<img src="icons/ok.png" alt="ok"
+                    class="icon-massage-box"></button>
+        </div>
+    </div>
+
+    <!-- Thông báo lỗi khi gửi dữ liệu -->
+    <!-- <div class="messange-box" style="display: none;">
+        <p id="message-text">Đã xảy ra lỗi khi gửi dữ liệu. Vui lòng thử lại sau.</p>
+        <div class="block-button-massage">
+            <button type="button" id="button-messange">Ok<img src="icons/ok.png" alt="ok"
+                    class="icon-massage-box"></button>
+        </div>
+    </div> -->
+
+
+    <footer id="contacts">
+        <p>
+            Позвонить нам: <a href="tel:+7-000-000-00-00">+7-000-000-00-00</a>
+            &nbsp;
+            <a href="https://www.facebook.com" target="_blank" class="icon" rel="noopener" alt="icon facebook"
+                title="Visit Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://web.telegram.org/a/" target="_blank" class="icon" rel="noopener" alt="icon telegram"
+                title="Visit Telegram"><i class="fa-brands fa-telegram"></i></a>
+        </p>
+    </footer>
+
+    <script src="loadDishes.js"></script>
+    <script src="ArrayFood.js"></script>
+    <script src="DisplayFood-PlacingOder.js"></script>
+    <script src="MakeOder-PlacingOder.js"></script>
+    <script src="CheckFormAndSendForm.js"></script>
+    <script src="PostData.js"></script>
+
+</html>
